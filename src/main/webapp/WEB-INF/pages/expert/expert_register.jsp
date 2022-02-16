@@ -6,14 +6,10 @@
     <title>Register Expert Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="<c:url value="/static/css/main.css"/>">
+    <link rel="stylesheet" href="<c:url value="/css/main.css"/>">
 
 </head>
-<head>
-    <title>Register Page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
+
 <body>
 <div class="container">
     <form:form cssClass="p-1 my-5 mx-5" modelAttribute="expert" enctype="multipart/form-data"

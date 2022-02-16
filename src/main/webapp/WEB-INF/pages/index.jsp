@@ -14,7 +14,7 @@
     <h1>WELCOME TO SERVICES HOME </h1>
     <div>
         <a href="login" class="btn btn-outline-primary">Login</a>
-        <a href="<c:url value="register"/>" class="btn btn-outline-primary">register</a>
+        <a href="register" class="btn btn-outline-primary">register</a>
     </div>
 
 </div>

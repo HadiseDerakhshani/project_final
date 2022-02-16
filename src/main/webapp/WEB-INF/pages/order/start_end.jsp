@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>score Page</title>
+    <title>start_end Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="<c:url value="/css/main.css"/>">
@@ -11,22 +11,16 @@
 </head>
 <body>
 <div class="container">
-    <h1>${message}</h1>
-    <h2>${customer.firstName} ${customer.lastName} </h2>
-    <h3>${order.service.name} ,${order.status}</h3>
-    <p> choose select option of payment</p>
-    <h3>${amount}</h3>
+    <h1>${expert.firstName} ${expert.firstName} please enter receptionNumber of order for start or end order</h1>
+
     <div>
 
         <form action="/expert/registerScore" method="post">
-            Score to expert :
+           reception number :
             <br>
-            <input type="text" placeholder="enter a number between 1-10" name="score" id="score" class="form-control" require>
-
+            <input type="text" placeholder="enter reception number" name="number" id="number" class="form-control" require>
             <br><br>
-            Comment :
-            <br>
-            <input type="text" placeholder="enter a number between 1-10" name="comment" class="form-control">
+            <span></span>
             <button type="submit" class="btn btn-primary" style="border-bottom: darkblue" >register</button>
         </form>
 
@@ -35,8 +29,9 @@
 </div>
 <script>
     $("form").submit(function (event) {
-
-        if ( $("#score").val() >= 1 && $("#score").val() <= 10) {
+        <c:forEach items="${list}" var="list">
+        if ( $("#number").val() == ${list.receptionNumber}) {
+            </c:forEach>
                 return;
         }
         $("span").text("score is empty!").show().fadeOut(2000);
