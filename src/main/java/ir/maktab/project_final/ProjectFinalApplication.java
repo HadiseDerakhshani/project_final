@@ -18,6 +18,7 @@ public class ProjectFinalApplication {
         SpringApplication.run(ProjectFinalApplication.class, args);
 
     }
+
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)

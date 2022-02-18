@@ -1,5 +1,6 @@
 package ir.maktab.project_final.service;
 
+import ir.maktab.project_final.data.dto.AddSubServiceDto;
 import ir.maktab.project_final.data.dto.SubServiceDto;
 import ir.maktab.project_final.data.entity.serviceSystem.SubService;
 
@@ -18,4 +19,6 @@ public interface SubServiceService {
     SubServiceDto save(SubServiceDto subServiceDto);
 
     void deleteSubService(String name);
+
+    SubServiceDto save(AddSubServiceDto addSubServiceDto);
 }

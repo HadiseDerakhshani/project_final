@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @Controller
@@ -90,9 +91,12 @@ public class OrderController {
 
     @GetMapping("/findOrder")
     public String findOrder(Model model, @SessionAttribute("customer") CustomerDto customerDto) {
-        List<OrderDto> orderDtoList = orderService.findOrderByCustomer(customerDto);
-        model.addAttribute("orderDtoList", orderDtoList);
-        return "order/choose_order";
+        List<OrderDto> orderDtoList = orderService.findOrderByCustomer(customerDto).stream()
+                .filter(o -> o.getStatus().equals(OrderStatus.WAITING_FOR_EXPERT_SELECTION)).collect(Collectors.toList());
+        if (orderDtoList.size() != 0) {
+            model.addAttribute("orderDtoList", orderDtoList);
+            return "order/choose_order";
+        } else return "customer/customer_profile";
     }
 
     @GetMapping("/payment")
@@ -108,7 +112,7 @@ public class OrderController {
                 model.addAttribute("amount", amount);
                 session.setAttribute("amount", amount);
                 session.setAttribute("order", order);
-                return "order/choose_type_payment";//page select type of payment
+                return "order/score";
             }
         }
         return "customer/customer_profile";//todo

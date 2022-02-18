@@ -180,17 +180,15 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void startAndEndOrder(int number, int chose, Expert expert) {
-      /*  Order order = findByReceptionNumber(number);
-        if (order != null) {
-            if (chose == 6)
-                updateStatus(order, OrderStatus.STARTED);
-            else if (chose == 7) {
-                updateStatus(order, OrderStatus.DONE);
-                expertServiceImpl.updateStatus(UserStatus.WAITING_CONFIRM, expert);
-            }
-        } else
-            throw new ObjectEntityNotFoundException(" order is not exit");*/
+    public OrderDto startAndEndOrder(long number) {
+        Order order = findByReceptionNumber(number);
+        if (order.getStatus().equals(OrderStatus.STARTED))
+            order.setStatus(OrderStatus.DONE);
+        else if (order.getStatus().equals(OrderStatus.WAITING_FOR_EXPERT_TO_COME))
+            order.setStatus(OrderStatus.STARTED);
+
+        orderRepository.save(order);
+        return orderMap.createOrderDto(order);
     }
 
     public OrderDto save(OrderDto orderDto) {

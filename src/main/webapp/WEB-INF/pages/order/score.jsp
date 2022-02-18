@@ -21,13 +21,14 @@
         <form action="/expert/registerScore" method="post">
             Score to expert :
             <br>
-            <input type="text" placeholder="enter a number between 1-10" name="score" id="score" class="form-control" require>
+            <input type="text" placeholder="enter a number between 1-10" name="score" id="score" class="form-control"
+                   require>
 
             <br><br>
             Comment :
             <br>
             <input type="text" placeholder="enter a number between 1-10" name="comment" class="form-control">
-            <button type="submit" class="btn btn-primary" style="border-bottom: darkblue" >register</button>
+            <button type="submit" class="btn btn-primary" style="border-bottom: darkblue">register</button>
         </form>
 
     </div>
@@ -36,8 +37,8 @@
 <script>
     $("form").submit(function (event) {
 
-        if ( $("#score").val() >= 1 && $("#score").val() <= 10) {
-                return;
+        if ($("#score").val() >= 1 && $("#score").val() <= 10) {
+            return;
         }
         $("span").text("score is empty!").show().fadeOut(2000);
         event.preventDefault();

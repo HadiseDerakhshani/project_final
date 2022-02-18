@@ -4,7 +4,6 @@ import ir.maktab.project_final.data.dto.*;
 import ir.maktab.project_final.data.entity.enums.OrderStatus;
 import ir.maktab.project_final.data.entity.order.Order;
 import ir.maktab.project_final.data.entity.user.Customer;
-import ir.maktab.project_final.data.entity.user.Expert;
 
 import java.util.List;
 
@@ -46,7 +45,7 @@ public interface OrderService {
 
     OrderDto findOrderToPayment(CustomerDto customer);
 
-    void startAndEndOrder(int number, int chose, Expert expert);
+    public OrderDto startAndEndOrder(long number);
 
     Double calculatePrice(OrderDto orderDto);
 

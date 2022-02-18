@@ -31,10 +31,9 @@ public class OrderMap {
         this.customerMap = customerMap;
     }
 
-    // @SneakyThrows
+
     public Order createOrder(OrderDto orderDto) {
         Order order = Order.builder()
-                //  .doDate(DateUtils.dateUtils(orderDto.getDoDate()))
                 .doDate(orderDto.getDoDate())
                 .jobDescription(orderDto.getJobDescription())
                 .proposedPrice(orderDto.getProposedPrice())
@@ -44,9 +43,7 @@ public class OrderMap {
                 .registerDate(orderDto.getRegisterDate())
                 .build();
 
-      /*  if(orderDto.getReceptionNumber()!=0){
-            order.setReceptionNumber(orderDto.getReceptionNumber());
-        }*/
+
         if (orderDto.getCustomer() != null) {
             order.setCustomer(customerMap.createCustomer(orderDto.getCustomer()));
         }
@@ -77,9 +74,7 @@ public class OrderMap {
                 .registerDate(order.getRegisterDate())
                 .build();
 
-        /*if(order.getReceptionNumber()!=0){
-            orderDto.setReceptionNumber(orderDto.getReceptionNumber());
-        }*/
+
         if (order.getExpert() != null) {
             orderDto.setExpert(expertMap.createExpertDto(order.getExpert()));
         }

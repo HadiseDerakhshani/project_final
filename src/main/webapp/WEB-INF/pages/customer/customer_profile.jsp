@@ -171,12 +171,8 @@
     <br><br>
     <a href="<c:url value="/"/>" class="btn btn-outline-primary">Main Menu</a>
     <a href="<c:url value="/order/findOrder"/>" class="btn btn-outline-primary">select expert</a>
-    <c:forEach items="${orderList}" var="list">
-        <c:if test="${list.status!='DONE'}">
-            <a href="<c:url value="" />" class="btn btn-outline-primary">new Order</a>
-        </c:if>
-    </c:forEach>
 
+    <a href="<c:url value="/order" />" class="btn btn-outline-primary">new Order</a>
 
     <a href="<c:url value="/order/payment" />" class="btn btn-outline-primary">payment</a>
 </div>

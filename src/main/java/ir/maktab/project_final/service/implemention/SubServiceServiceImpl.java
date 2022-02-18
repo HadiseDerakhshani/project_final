@@ -1,5 +1,6 @@
 package ir.maktab.project_final.service.implemention;
 
+import ir.maktab.project_final.data.dto.AddSubServiceDto;
 import ir.maktab.project_final.data.dto.SubServiceDto;
 import ir.maktab.project_final.data.dto.mapper.ExpertMap;
 import ir.maktab.project_final.data.dto.mapper.SubServiceMap;
@@ -74,5 +75,9 @@ public class SubServiceServiceImpl implements SubServiceService {
         subServiceRepository.delete(find(name));
     }
 
+    @Override
+    public SubServiceDto save(AddSubServiceDto addSubServiceDto) {
+        return null;
+    }
 
 }

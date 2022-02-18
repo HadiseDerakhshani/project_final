@@ -34,9 +34,9 @@ public class SuggestionMap {
         if (suggestionDto.getExpert() != null) {
             suggestion.setExpert(expertMap.createExpert(suggestionDto.getExpert()));
         }
-        if (suggestionDto.getOrder() != null) {
+      /*  if (suggestionDto.getOrder() != null) {
             suggestion.setOrder(orderMap.createOrder(suggestionDto.getOrder()));
-        }
+        }*/
 
         return suggestion;
     }
@@ -53,10 +53,10 @@ public class SuggestionMap {
         if (suggestion.getExpert() != null) {
             suggest.setExpert(expertMap.createExpertDto(suggestion.getExpert()));
         }
-        if (suggestion.getOrder() != null) {
+       /* if (suggestion.getOrder() != null) {
             suggest.setOrder(orderMap.createOrderDto(suggestion.getOrder()));
         }
-
+*/
         return suggest;
     }
 }

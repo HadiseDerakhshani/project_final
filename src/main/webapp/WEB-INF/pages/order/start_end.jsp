@@ -11,29 +11,38 @@
 </head>
 <body>
 <div class="container">
-    <h1>${expert.firstName} ${expert.firstName} please enter receptionNumber of order for start or end order</h1>
 
-    <div>
+    <c:if test="${message == null }">
+        <h1>${expert.firstName} ${expert.firstName} please enter receptionNumber of order for start or end order</h1>
+        <br><br>
+        <div>
 
-        <form action="/expert/registerScore" method="post">
-           reception number :
-            <br>
-            <input type="text" placeholder="enter reception number" name="number" id="number" class="form-control" require>
-            <br><br>
-            <span></span>
-            <button type="submit" class="btn btn-primary" style="border-bottom: darkblue" >register</button>
-        </form>
+            <form action="/expert/findOrder" method="post">
+                reception number :
+                <br>
+                <input type="text" placeholder="enter reception number" name="number" id="number" class="form-control"
+                       require>
+                <br><br>
+                <span></span>
+                <button type="submit" class="btn btn-primary" style="border-bottom: darkblue">search</button>
+            </form>
 
-    </div>
+        </div>
+    </c:if>
+    <br><br>
+    <c:if test="${message != null }">
+        <h1>${order.receptionNumber} ${message}</h1>
+    </c:if>
+
 
 </div>
 <script>
     $("form").submit(function (event) {
         <c:forEach items="${list}" var="list">
-        if ( $("#number").val() == ${list.receptionNumber}) {
-            </c:forEach>
-                return;
+        if ($("#number").val() === ${list.receptionNumber}) {
+            return;
         }
+        </c:forEach>
         $("span").text("score is empty!").show().fadeOut(2000);
         event.preventDefault();
     });

@@ -203,6 +203,7 @@
     <br><br>
     <a href="<c:url value="/"/>" class="btn btn-outline-primary">Main Menu</a>
     <a href="<c:url value="/expert/suggestion"/>" class="btn btn-outline-primary">new suggestion</a>
+    <a href="<c:url value="/expert/startAndEndView"/>" class="btn btn-outline-primary">start/end order</a>
 </div>
 <script>
     /*  @{
