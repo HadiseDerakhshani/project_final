@@ -25,11 +25,11 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping(value = "/error")
+  /*  @GetMapping(value = "/error")
     public String errorView() {
 
         return "errorPage";
-    }
+    }*/
 
     @GetMapping(value = "/login")
     public String loginView(Model model) {

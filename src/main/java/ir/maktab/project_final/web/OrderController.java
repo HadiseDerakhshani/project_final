@@ -46,16 +46,12 @@ public class OrderController {
         this.orderService = orderService;
         this.subServiceService = subServiceService;
         this.service = service;
-
-
     }
 
 
     @GetMapping
     public ModelAndView showRegisterOrder() {
-
         List<ServiceDto> serviceDtoList = service.findAll();
-
         return new ModelAndView("services/choose_service", "serviceList", serviceDtoList);
     }
 

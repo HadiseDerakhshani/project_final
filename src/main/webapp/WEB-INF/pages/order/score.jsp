@@ -14,10 +14,10 @@
     <h1>${message}</h1>
     <h2>${customer.firstName} ${customer.lastName} </h2>
     <h3>${order.service.name} ,${order.status}</h3>
-    <p> choose select option of payment</p>
     <h3>${amount}</h3>
     <div>
-
+        <h3>please score to expert</h3>
+        <br><br>
         <form action="/expert/registerScore" method="post">
             Score to expert :
             <br>

@@ -119,11 +119,12 @@ public class ExpertController {
     }
 
     @PostMapping("/registerScore")
-    public ModelAndView registerScore(@RequestParam("score") String score, @RequestParam(value = "comment", required = false) String comment,
+    public ModelAndView registerScore(@RequestParam("score") int score, @RequestParam(value = "comment", required = false) String comment,
                                       @SessionAttribute("order") OrderDto orderDto) {
         if (comment != null && !comment.isEmpty())
             commentService.save(orderDto, comment);
-        expertService.updateScore(Integer.parseInt(score), orderDto);
+        int number = score;
+        expertService.updateScore(number, orderDto);
         return new ModelAndView("order/choose_type_payment", "message", "score register Successfully");
     }
 
